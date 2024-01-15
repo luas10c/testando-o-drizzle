@@ -1,0 +1,18 @@
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import { tb_customers } from "./schemas/tb_customers.js";
+import { tb_wallets } from "./schemas/tb_wallets.js";
+import { env } from "../config/env.js";
+export const database = drizzle(postgres(env.DATABASE_URL, {
+    max: 1,
+    debug: true,
+    ssl: false
+}), {
+    logger: true,
+    schema: {
+        tb_customers,
+        tb_wallets
+    }
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2x1Y2lhbm8vRG93bmxvYWRzL3Rlc3RhbmRvLW8tZHJpenpsZS9zcmMvZGF0YWJhc2UvZHJpenpsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBkcml6emxlIH0gZnJvbSAnZHJpenpsZS1vcm0vcG9zdGdyZXMtanMnXG5pbXBvcnQgcG9zdGdyZXMgZnJvbSAncG9zdGdyZXMnXG5cbmltcG9ydCB7IHRiX2N1c3RvbWVycyB9IGZyb20gJy4vc2NoZW1hcy90Yl9jdXN0b21lcnMuanMnXG5pbXBvcnQgeyB0Yl93YWxsZXRzIH0gZnJvbSAnLi9zY2hlbWFzL3RiX3dhbGxldHMuanMnXG5cbmltcG9ydCB7IGVudiB9IGZyb20gJyMvY29uZmlnL2Vudi5qcydcblxuZXhwb3J0IGNvbnN0IGRhdGFiYXNlID0gZHJpenpsZShcbiAgcG9zdGdyZXMoZW52LkRBVEFCQVNFX1VSTCwge1xuICAgIG1heDogMSxcbiAgICBkZWJ1ZzogdHJ1ZSxcbiAgICBzc2w6IGZhbHNlXG4gIH0pLFxuICB7XG4gICAgbG9nZ2VyOiB0cnVlLFxuICAgIHNjaGVtYToge1xuICAgICAgdGJfY3VzdG9tZXJzLFxuICAgICAgdGJfd2FsbGV0c1xuICAgIH1cbiAgfVxuKVxuIl0sIm5hbWVzIjpbImRyaXp6bGUiLCJwb3N0Z3JlcyIsInRiX2N1c3RvbWVycyIsInRiX3dhbGxldHMiLCJlbnYiLCJkYXRhYmFzZSIsIkRBVEFCQVNFX1VSTCIsIm1heCIsImRlYnVnIiwic3NsIiwibG9nZ2VyIiwic2NoZW1hIl0sIm1hcHBpbmdzIjoiQUFBQSxTQUFTQSxPQUFPLFFBQVEsMEJBQXlCO0FBQ2pELE9BQU9DLGNBQWMsV0FBVTtBQUUvQixTQUFTQyxZQUFZLFFBQVEsNEJBQTJCO0FBQ3hELFNBQVNDLFVBQVUsUUFBUSwwQkFBeUI7QUFFcEQsU0FBU0MsR0FBRyxRQUFRLG1CQUFpQjtBQUVyQyxPQUFPLE1BQU1DLFdBQVdMLFFBQ3RCQyxTQUFTRyxJQUFJRSxZQUFZLEVBQUU7SUFDekJDLEtBQUs7SUFDTEMsT0FBTztJQUNQQyxLQUFLO0FBQ1AsSUFDQTtJQUNFQyxRQUFRO0lBQ1JDLFFBQVE7UUFDTlQ7UUFDQUM7SUFDRjtBQUNGLEdBQ0QifQ==
